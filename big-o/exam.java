@@ -25,7 +25,7 @@ class BigO{
     static void exam2(int[] array) {
         for(int i=0; i<array.length; i++){
             for(int j=0;j<array.length;j++){
-                System.out.println("o(N^2) - ver1: "+array[i]+","+array[j]);
+                System.out.println("o(N^2): "+array[i]+","+array[j]);
             }
         }
     }
@@ -41,7 +41,7 @@ class BigO{
     static void exam3(int[] array) {
         for(int i=0; i<array.length; i++){
             for(int j=i+1;j<array.length;j++){
-                System.out.println("o(N^2) - ver2: "+array[i]+","+array[j]);
+                System.out.println("o(N^2): "+array[i]+","+array[j]);
             }
         }
     }
@@ -49,7 +49,8 @@ class BigO{
      * 
      * @param aArr
      * @param bArr
-     * O(ab) 두 루프의 array.length가 각각 다름
+     * O(ab)
+     * 두 루프의 array.length가 각각 다름
      * 밖 for문이 한 번 반복할때 마다 안쪽 for문의 b(bArr.length 회) 반복하므로 두 배열의 크기를 고려하여 ab 시간걸림 
      */
     static void exam4(int[] aArr, int[] bArr){
@@ -61,11 +62,75 @@ class BigO{
             }
         }
     }
+    /**
+     * 
+     * @param aArr
+     * @param bArr
+     * O(ab), if문과 마찬가지로 새로운 for문은 100000 반복하므로 상수항으로 간주 됨
+     */
+    static void exam5(int[] aArr, int[] bArr){
+        for(int i=0; i<aArr.length; i++){
+            for(int j=0; j<bArr.length; j++){
+                for(int k=0; k<100000; k++){ // 100000은 상수항으로 간주되므로 여전히 O(1) 과 동일 
+                    System.out.println("O(ab): "+aArr[i]+","+bArr[j]); 
+                }
+            }
+        }
+    }
+    /**
+     * 
+     * @param array
+     * 예시의 루프는 array.length/2 로 나눠도 동일하게 O(N) 만큼의 시간 걸림    
+     */
+    static void exam6(int[] array){
+        for(int i=0; i<array.length/2; i++){ // array.length/3, array.length/4 도 마찬가지 
+            int other = array.length - i - 1;
+            int temp = array[i];
+            array[i] = array[other];
+            array[other] = temp;
+            //System.out.println(array[i]);
+        }
+    }
+    static void exam7(){
+        
+    }
+    static void exam8(){
 
+    }
+    static void exam9(){
+
+    }
+    static void exam10(){
+
+    }
+    static void exam11(){
+
+    }
+    static void exam12(){
+
+    }
+    static void exam13(){
+
+    }
+    static void exam14(){
+
+    }
+    static void exam15(){
+
+    }
+    static void exam16(){
+
+    }
+    static void exam17(){
+
+    }
     public static void main(String[] args) {
         int[] a = { 1, 2, 3, 4 };
         int[] b = { 6, 2 };
-        exam4(a,b);
+        exam7(a);
+        //exam6(a);
+        //exam5(a,b);
+        //exam4(a,b);
         //exam3(a);
         //exam2(a);
         //exam1(a);
