@@ -45,11 +45,29 @@ class BigO{
             }
         }
     }
+    /**
+     * 
+     * @param aArr
+     * @param bArr
+     * O(ab) 두 루프의 array.length가 각각 다름
+     * 밖 for문이 한 번 반복할때 마다 안쪽 for문의 b(bArr.length 회) 반복하므로 두 배열의 크기를 고려하여 ab 시간걸림 
+     */
+    static void exam4(int[] aArr, int[] bArr){
+        for(int i=0; i<aArr.length;i++){
+            for(int j=0;j<bArr.length;j++){
+                if(aArr[i] < bArr[j]){ // if문은 상수 시간에 수행가능한 단순한 조건문으로 O(1) 시간이라 함 
+                    System.out.println("O(ab): "+aArr[i]+","+bArr[j]); 
+                }
+            }
+        }
+    }
 
     public static void main(String[] args) {
         int[] a = { 1, 2, 3, 4 };
-        //exam1(a);
+        int[] b = { 6, 2 };
+        exam4(a,b);
+        //exam3(a);
         //exam2(a);
-        exam3(a);
+        //exam1(a);
     }
 }
