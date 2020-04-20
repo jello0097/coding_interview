@@ -91,43 +91,10 @@ class BigO{
             //System.out.println(array[i]);
         }
     }
-    static void exam7(){
-        
-    }
-    static void exam8(){
-
-    }
-    static void exam9(){
-
-    }
-    static void exam10(){
-
-    }
-    static void exam11(){
-
-    }
-    static void exam12(){
-
-    }
-    static void exam13(){
-
-    }
-    static void exam14(){
-
-    }
-    static void exam15(){
-
-    }
-    static void exam16(){
-
-    }
-    static void exam17(){
-
-    }
     public static void main(String[] args) {
         int[] a = { 1, 2, 3, 4 };
         int[] b = { 6, 2 };
-        exam7(a);
+        exam6(a);
         //exam6(a);
         //exam5(a,b);
         //exam4(a,b);
